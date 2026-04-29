@@ -9,16 +9,26 @@
     <title>Descubra a Palavra</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Descubra a Palavra</h1>
-        <p id="palavra">_ _ _ _ _</p>
-        <input type="text" id="letra" maxlength="1" placeholder="Digite uma letra">
-        <button onclick="verificarLetra()">Tentar</button>
-
-        <p id="tentativas">Tentativas restantes: 6</p>
-        <p id="mensagem"></p>
+    
+    <div id="telaInicial">
+        <h1>Jogo das Palavras</h1>
+        <button onclick="iniciarJogo()">Iniciar Jogo</button>
     </div>
 
+    <div id="jogo" style="display: none;">
+        <h2 id="pontuacao">Pontos: 0</h2>
+        <p id="palavra"></p>
+
+        <input type="text" id="letra" maxlength="1">
+        <button onclick="verificarLetra()">Tentar</button>
+
+        <p id="letrasUsadas"></p>
+        <p id="tentativas"></p>
+        <p id="mensagem"></p>
+
+        <button onclick="reiniciar()">Reiniciar</button>
+    </div>
+    
     <script src="/js/script.js"></script>
 </body>
 </html>
