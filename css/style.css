@@ -11,6 +11,17 @@ body {
 #palavra {
     font-size: 30px;
     letter-spacing: 10px;
+    transition: 0.3s;
+}
+
+.acerto {
+    color: green;
+    transform: scale(1.2);
+}
+
+.erro {
+    color: red;
+    transform: scale(0.8);
 }
 
 input {
@@ -23,3 +34,4 @@ button {
     font-size: 16px;
     cursor: pointer;
 }
+
