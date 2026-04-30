@@ -14,6 +14,7 @@
 
     <div id="telaInicial">
         <h1>Jogo das Palavras</h1>
+        <input type="text" id="nome" placeholder="Digite o seu nome: ">
         <button onclick="iniciarJogo()">Iniciar o Jogo</button>
     </div>
 
@@ -28,28 +29,12 @@
         <p id="tentativas"></p>
         <p id="mensagem"></p>
 
-        <button onclick="reiniciar()">Reiniciar</button>
+        <button onclick="finalizarJogo()">Finalizar</button>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="/js/script.js"></script>
+    <h2>Ranking</h2>
+    <ul id="ranking"></ul>
+    <script src="/frontend/js/script.js"></script>
 </body>
 
 </html>
