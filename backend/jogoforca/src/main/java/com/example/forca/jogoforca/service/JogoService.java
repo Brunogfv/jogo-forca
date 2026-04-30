@@ -7,9 +7,13 @@ import java.util.Random;
 import org.springframework.stereotype.Service;
 
 import com.example.forca.jogoforca.model.Pontuacao;
+import com.example.forca.jogoforca.repository.PontuacaoRepository;
 
 @Service
 public class JogoService {
+
+    private final PontuacaoRepository repository;
+
     private List<String> palavras = List.of("CASA", "CARRO", "BOLA", "GATO", "SOL", "MAR", "FLOR", "PÃO", "MESA",
             "CHUVA",
             "FOGO", "VENTO", "LUA", "PEIXE", "TERRA", "JANELA", "ESTRADA", "BICICLETA",
@@ -21,7 +25,9 @@ public class JogoService {
             "SANDUÍCHE", "ALEMANHA", "PORTUGAL", "BRASIL", "ARGENTINA", "JAPÃO", "MÉDICO",
             "ENGENHEIRO", "PROFESSOR", "ADVOGADO", "BOMBEIRO");
 
-    private List<Pontuacao> ranking = new ArrayList<>();
+    public JogoService(PontuacaoRepository repository) {
+        this.repository = repository;
+    }
 
     public String getPalavraAleatoria() {
         Random random = new Random();
@@ -29,11 +35,10 @@ public class JogoService {
     }
 
     public void salvarPontuacao(Pontuacao p) {
-        ranking.add(p);
-        ranking.sort((a, b) -> b.getPontos() - a.getPontos());
+        repository.save(p);
     }
 
     public List<Pontuacao> getRanking() {
-        return ranking;
+        return repository.findAllByOrderByPontosDesc();
     }
 }

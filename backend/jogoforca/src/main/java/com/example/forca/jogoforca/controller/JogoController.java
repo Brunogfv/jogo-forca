@@ -16,6 +16,7 @@ import com.example.forca.jogoforca.service.JogoService;
 @RequestMapping("/api/jogo")
 @CrossOrigin
 public class JogoController {
+
     private final JogoService service;
 
     public JogoController(JogoService service) {
